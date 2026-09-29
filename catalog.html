@@ -3,36 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aroma Atelier — Бутик нишевой парфюмерии</title>
-  <!-- meta description повышает оценку за культуру вёрстки -->
-  <meta name="description" content="Селективная парфюмерия, редкие композиции и заказ пробников.">
+  <title>Каталог — Aroma Atelier</title>
+  <meta name="description" content="Каталог селективной и нишевой парфюмерии: восточные, древесные и свежие ароматы.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
     <div class="div-head container">
-        <h1 class="brand-title">
-          <a class="brand-name" href="index.html">Aroma Atelier</a>
-        </h1>
-      <nav>
+      <h1 class="brand-title">
+        <a class="brand-name" href="index.html">Aroma Atelier</a>
+      </h1>
+      <nav aria-label="Основная навигация">
         <ul class="links">
           <li><a href="index.html">Главная</a></li>
-          <li><a href="catalog.html" class="link--active">Каталог</a></li>
+          <li><a class="link--active" href="catalog.html" aria-current="page">Каталог</a></li>
           <li><a href="order.html">Избранное</a></li>
           <li><a href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
     </div>
   </header>
-    
-  <main>
+
+  <main class="catalog-page container">
+
+    <!-- Левая колонка: Фильтры -->
+    <aside class="catalog-filters">
+      <h2 class="filters-title">Фильтры</h2>
+
+      <form class="filters-form">
+        <!-- 1. Группа по семейству ароматов (Чекбоксы - можно выбрать несколько) -->
+        <fieldset class="filter-group">
+          <legend class="filter-group__legend">Семейство нот</legend>
+          <label class="filter-option">
+            <input type="checkbox" name="family" value="woody"> Древесные
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="family" value="oriental"> Восточные
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="family" value="fresh"> Свежие / Цитрусовые
+          </label>
+        </fieldset>
+
+        <!-- 2. Группа по объему флакона (Радиокнопки - выбор только одного) -->
+        <fieldset class="filter-group">
+          <legend class="filter-group__legend">Объём</legend>
+          <label class="filter-option">
+            <input type="radio" name="volume" value="all" checked> Все объёмы
+          </label>
+          <label class="filter-option">
+            <input type="radio" name="volume" value="10"> Отливант 10 мл
+          </label>
+          <label class="filter-option">
+            <input type="radio" name="volume" value="50"> Флакон 50 мл
+          </label>
+          <label class="filter-option">
+            <input type="radio" name="volume" value="100"> Флакон 100 мл
+          </label>
+        </fieldset>
+
+        <button type="reset" class="btn btn--secondary btn--reset">Сбросить</button>
+      </form>
+    </aside>
+
+    <!-- Правая колонка: Сетка товаров -->
+    <section class="catalog-content">
+      <h2 class="section-title">Все ароматы коллекции</h2>
+      <div class="catalog-grid">
+        <!-- Карточка 1 -->
+        <article class="card">
+          <span class="badge badge--hit">Хит</span>
+          <h3 class="card__title">Layton Royal</h3>
+          <p class="card__category">Восточные, пряные</p>
+          <p class="card__desc">Бергамот, яблоко и лаванда с глубоким древесно-ванильным шлейфом.</p>
+          <div class="card__bottom">
+            <span class="card__price">24 500 ₽</span>
+            <a class="btn btn--small" href="product.html">Подробнее</a>
+          </div>
+        </article>
+
+        <!-- Карточка 2 -->
+        <article class="card">
+          <span class="badge badge--sale">-15%</span>
+          <h3 class="card__title">Santal Wood</h3>
+          <p class="card__category">Древесные, кожаные</p>
+          <p class="card__desc">Тёплый австралийский сандал, сухой кедр и мягкая замша.</p>
+          <div class="card__bottom">
+            <span class="card__price">18 700 ₽</span>
+            <a class="btn btn--small" href="product.html">Подробнее</a>
+          </div>
+        </article>
+
+        <!-- Карточка 3 -->
+        <article class="card">
+          <span class="badge badge--new">Новинка</span>
+          <h3 class="card__title">Mineral Amber</h3>
+          <p class="card__category">Свежие, минеральные</p>
+          <p class="card__desc">Искрящийся грейпфрут, влажный ветивер и прохладная серая амбра.</p>
+          <div class="card__bottom">
+            <span class="card__price">21 000 ₽</span>
+            <a class="btn btn--small" href="product.html">Подробнее</a>
+          </div>
+        </article>
+
+        <!-- Карточка 4 -->
+        <article class="card">
+          <h3 class="card__title">Black Pepper & Neroli</h3>
+          <p class="card__category">Пряные, цитрусовые</p>
+          <p class="card__desc">Острый мадагаскарский перец, цветы апельсинового дерева и элеми.</p>
+          <div class="card__bottom">
+            <span class="card__price">16 200 ₽</span>
+            <a class="btn btn--small" href="product.html">Подробнее</a>
+          </div>
+        </article>
+
+        <!-- Карточка 5 -->
+        <article class="card">
+          <span class="badge badge--hit">Хит</span>
+          <h3 class="card__title">Velvet Tobacco</h3>
+          <p class="card__category">Восточные, табачные</p>
+          <p class="card__desc">Листья кубинского табака, медовый ладан, бобы тонка и корица.</p>
+          <div class="card__bottom">
+            <span class="card__price">26 800 ₽</span>
+            <a class="btn btn--small" href="product.html">Подробнее</a>
+          </div>
+        </article>
+
+        <!-- Карточка 6 -->
+        <article class="card">
+          <h3 class="card__title">Iris Imperial</h3>
+          <p class="card__category">Цветочные, пудровые</p>
+          <p class="card__desc">Флорентийский корень ириса, мускус, фиалка и белый кедр.</p>
+          <div class="card__bottom">
+            <span class="card__price">22 400 ₽</span>
+            <a class="btn btn--small" href="product.html">Подробнее</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
   </main>
+
   <footer>
     <div class="div-foot container">
-        <p>&copy; 2026 Учебный проект</p>
-        <p>by seven</p>
+      <p>&copy; 2026 Учебный проект</p>
+      <p>by seven</p>
     </div>
   </footer>
 </body>
-
+</html>

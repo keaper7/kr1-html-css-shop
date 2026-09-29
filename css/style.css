@@ -2,12 +2,17 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   line-height: 1.5;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 header,
 main,
 footer {
   padding: 20px;
 }
+main {flex-grow: 1;}
 header {
   background-color: #f2f2f2;
 }
@@ -254,3 +259,77 @@ footer {
 .advice-box__link:hover {
   text-decoration: underline;
 }
+
+
+
+
+/* СТИЛИ ДЛЯ КАТАЛОГА НАЧАЛО */
+
+.catalog-page {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+  align-items: start;
+}
+/* 1. Стили панели фильтров */
+.catalog-filters {
+  background-color: #fafafa;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  padding: 24px;
+  margin: 24px;
+}
+
+.filters-title {
+  margin: 0 0 20px;
+  font-size: 20px;
+}
+
+.filter-group {
+  border: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.filter-group__legend {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333333;
+  cursor: pointer;
+}
+
+.filter-option input {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.btn--reset {
+  width: 100%;
+  text-align: center;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.btn--reset:hover {
+  background-color: #f0f0f0;
+}
+
+/* 2. Сетка товаров на CSS Grid */
+.catalog-grid {
+  display: grid;
+  /* Адаптивная колоночная сетка: карточки шириной от 240px делят 1fr */
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+/* СТИЛИ ДЛЯ КАТАЛОГА КОНЕЦ */
