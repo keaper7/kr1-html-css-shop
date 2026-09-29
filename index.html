@@ -3,33 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Каталог товаров</title>
+  <title>Aroma Atelier — Бутик нишевой парфюмерии</title>
+  <!-- meta description повышает оценку за культуру вёрстки -->
+  <meta name="description" content="Селективная парфюмерия, редкие композиции и заказ пробников.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <h1>Учебный интернет-магазин</h1>
+    <div class="div-head container">
+        <h1 class="brand-title">
+          <a class="brand-name" href="index.html">Aroma Atelier</a>
+        </h1>
+      <nav aria-label="Основная навигация">
+        <ul class="links">
+          <li><a class="link--active" href="index.html" aria-current="page">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="order.html">Избранное</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
+    
   <main>
-    <section>
-      <h2>Главная страница проекта</h2>
-      <p>
-        Это стартовая страница учебного frontend-проекта.
-        В дальнейшем здесь будет разработан многостраничный сайт
-        интернет-магазина или каталога услуг.
-      </p>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div>
+            <h2>Ароматы, которые создают впечатление</h2>
+            <p>Магазин люксовой парфюмерии. Лучшие ароматы со всего мира</p>
+            <div class="hero__buttons">
+              <a class="btn btn--primary" href="catalog.html">Посмотреть каталог</a>
+              <a class="btn btn--secondary" href="#popular">Популярные ароматы</a>
+            </div>
+          </div>
+          <img src="images/layton-hero.webp" alt="" class="layton-hero">
+        </div>
+
+      </div>
     </section>
-    <section>
-    <h2>О проекте</h2>
-    <p>
-        В рамках данного проекта будет разработан многостраничный сайт
-        интернет-магазина или каталога услуг. Проект будет постепенно
-        расширяться на следующих практических занятиях.
-    </p>
+
+    <!-- Секция преимуществ с якорным id -->
+    <section class="advantages section" id="advantages">
+      <div class="container">
+        <h2 class="section-title">Наши преимущества</h2>
+        <ul class="advantages-list">
+          <li class="advantages-item">
+            <h3 class="advantages-item__title">100% оригинальность</h3>
+            <p class="advantages-item__text">
+              Работаем напрямую с официальными дистрибьюторами и нишевыми домами Европы.
+            </p>
+          </li>
+          <li class="advantages-item">
+            <h3 class="advantages-item__title">Формат отливантов</h3>
+            <p class="advantages-item__text">
+              Миниатюры от 5 и 10 мл для комфортного знакомства с ароматом перед покупкой флакона.
+            </p>
+          </li>
+          <li class="advantages-item">
+            <h3 class="advantages-item__title">Индивидуальный подбор</h3>
+            <p class="advantages-item__text">
+              Поможем составить персональный аромагардероб под сезон, стиль и настроение.
+            </p>
+          </li>
+        </ul>
+      </div>
     </section>
+
+    <!-- 3. Популярные товары с якорным id -->
+    <section class="popular section" id="popular">
+      <div class="container">
+        <h2 class="section-title">Популярные композиции</h2>
+        <div class="cards-grid">
+
+          <!-- Карточка 1 с бейджем Хит -->
+          <article class="card">
+            <span class="badge badge--hit">Хит</span>
+            <h3 class="card__title">Layton Royal</h3>
+            <p class="card__category">Восточные, пряные</p>
+            <p class="card__desc">
+              Бергамот, яблоко и лаванда с глубоким древесно-ванильным шлейфом.
+            </p>
+            <div class="card__bottom">
+              <span class="card__price">24 500 ₽</span>
+              <a class="btn btn--small" href="product.html">Подробнее</a>
+            </div>
+          </article>
+
+          <!-- Карточка 2 с бейджем Скидка -->
+          <article class="card">
+            <span class="badge badge--sale">-15%</span>
+            <h3 class="card__title">Santal Wood</h3>
+            <p class="card__category">Древесные, кожаные</p>
+            <p class="card__desc">
+              Тёплый австралийский сандал, сухой кедр и мягкая замша.
+            </p>
+            <div class="card__bottom">
+              <span class="card__price">18 700 ₽</span>
+              <a class="btn btn--small" href="product.html">Подробнее</a>
+            </div>
+          </article>
+
+          <!-- Карточка 3 с бейджем Новинка -->
+          <article class="card">
+            <span class="badge badge--new">Новинка</span>
+            <h3 class="card__title">Mineral Amber</h3>
+            <p class="card__category">Свежие, минеральные</p>
+            <p class="card__desc">
+              Искрящийся грейпфрут, влажный ветивер и прохладная серая амбра.
+            </p>
+            <div class="card__bottom">
+              <span class="card__price">21 000 ₽</span>
+              <a class="btn btn--small" href="product.html">Подробнее</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Вспомогательный блок aside (совет парфюмера) -->
+    <aside class="advice-block section">
+      <div class="container">
+        <div class="advice-box">
+          <h3 class="advice-box__title">Совет от парфюмера</h3>
+          <p class="advice-box__text">
+            Наносите духи на точки пульсации (запястья, ключицы, за мочки ушей) и никогда не растирайте кожу после распыления, чтобы не разрушить верхние летучие молекулы.
+          </p>
+          <a class="advice-box__link" href="order.html">Заказать персональный подбор пробников &rarr;</a>
+        </div>
+      </div>
+    </aside>
+    
   </main>
+
   <footer>
-    <p>&copy; 2026 Учебный проект</p>
+    <div class="div-foot container">
+        <p>&copy; 2026 Учебный проект</p>
+        <p>by seven</p>
+    </div>
   </footer>
 </body>
 </html>
+

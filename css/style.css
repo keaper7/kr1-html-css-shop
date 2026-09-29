@@ -11,12 +11,246 @@ footer {
 header {
   background-color: #f2f2f2;
 }
+.div-head {
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.div-foot {
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 footer {
   background-color: #f2f2f2;
 }
-section {
-  margin-bottom: 24px;
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 0 20px;
 }
-section h2 {
-  margin-top: 0;
+
+.brand-name {
+  text-decoration: none;
+  color: black;
+}
+.brand-title {
+  margin: 0;
+  font-size: 24px;
+}
+
+.links {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.links a{
+  text-decoration: none;
+  color: black;
+}
+
+.links a.link--active {
+  font-weight: bold;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 4px;
+}
+
+
+/* FIRST PAGE START*/
+.hero {
+  background-color: #f9f9f9;
+  padding: 10% 0;
+}
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero_buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: black;
+}
+.btn--primary {
+  border: 1px solid black;
+  background-color: antiquewhite;
+}
+.btn--secondary {
+  border: 1px solid black;
+  background-color: transparent;
+}
+.layton-hero {
+  max-width: 40%;
+}
+/* FIRST PAGE END*/
+
+
+/* Общие стили секций */
+.section {
+  margin: 60px 0;
+}
+
+.section-title {
+  font-size: 26px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* Список преимуществ (Flexbox раскладка в ряд) */
+.advantages-list {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Карточка преимущества */
+.advantages-item {
+  flex: 1; /* карточки равномерно делят ширину */
+  background-color: #fafafa;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.advantages-item__title {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.advantages-item__text {
+  margin: 0;
+  color: #555555;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* Сетка карточек */
+.cards-grid {
+  display: flex;
+  gap: 24px;
+}
+
+/* Карточка товара */
+.card {
+  position: relative; /* Чтобы бейдж позиционировался относительно карточки */
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__title {
+  margin: 16px 0 4px;
+  font-size: 18px;
+}
+
+.card__category {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: #777777;
+}
+
+.card__desc {
+  margin: 0 0 20px;
+  font-size: 14px;
+  color: #444444;
+  line-height: 1.4;
+  flex-grow: 1; /* Растягивает блок описания, чтобы низ карточек был на одной линии */
+}
+
+.card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.card__price {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.btn--small {
+  padding: 6px 14px;
+  font-size: 13px;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.btn--small:hover {
+  background-color: #333333;
+}
+
+/* Бейджи на карточках (демонстрация position: absolute) */
+.badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.badge--hit {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.badge--sale {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.badge--new {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+/* Стили для блока aside */
+.advice-box {
+  background-color: #f8f9fa;
+  border-left: 4px solid #000000;
+  padding: 24px;
+  border-radius: 0 8px 8px 0;
+}
+
+.advice-box__title {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.advice-box__text {
+  margin: 0 0 14px;
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.5;
+}
+
+.advice-box__link {
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.advice-box__link:hover {
+  text-decoration: underline;
 }
