@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layton Royal — Aroma Atelier</title>
+  <meta name="description" content="Нишевый аромат Layton Royal: восточная пряная композиция с нотами бергамота, лаванды и ванили.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="div-head container">
+      <h1 class="brand-title">
+        <a class="brand-name" href="index.html">Aroma Atelier</a>
+      </h1>
+      <nav aria-label="Основная навигация">
+        <ul class="links">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="order.html">Заказ</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="product-page container">
+    <!-- Хлебные крошки -->
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumbs__item"><a href="catalog.html">Каталог</a></li>
+        <li class="breadcrumbs__item" aria-current="page">Layton Royal</li>
+      </ol>
+    </nav>
+
+    <!-- Карточка конкретного парфюма -->
+    <article class="product-card">
+      <div class="product-card__gallery">
+        <img class="product-card__image" src="images/layton-hero.webp" alt="Флакон нишевого парфюма Layton Royal">
+      </div>
+
+      <div class="product-card__details">
+        <span class="badge badge--hit">Хит продаж</span>
+        <h2 class="product-card__title">Layton Royal</h2>
+        <p class="product-card__subtitle">Восточные, пряные • Концентрация: Eau de Parfum</p>
+
+        <p class="product-card__desc">
+          Благородная композиция, сочетающая свежесть хрустящего яблока и бергамота с глубоким сердцем из дикой лаванды, жасмина и герани. База раскрывается тёплыми аккордами гваякового дерева, ванили и пряного перца.
+        </p>
+
+        <!-- Пирамида нот через список описаний <dl> -->
+        <div class="notes-pyramid">
+          <h3 class="notes-pyramid__heading">Ольфакторная пирамида</h3>
+          <dl class="notes-list">
+            <dt class="notes-list__term">Верхние ноты:</dt>
+            <dd class="notes-list__desc">Бергамот, Зеленое яблоко, Лаванда</dd>
+
+            <dt class="notes-list__term">Ноты сердца:</dt>
+            <dd class="notes-list__desc">Жасмин, Фиалка, Герань</dd>
+
+            <dt class="notes-list__term">Базовые ноты:</dt>
+            <dd class="notes-list__desc">Ваниль, Кардамон, Гваяк, Пачули</dd>
+          </dl>
+        </div>
+
+        <div class="product-card__purchase">
+          <div class="product-card__price-wrap">
+            <span class="product-card__price">24 500 ₽</span>
+            <span class="product-card__volume">за флакон 125 мл</span>
+          </div>
+          <a class="btn btn--primary" href="order.html">Перейти к заказу</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="div-foot container">
+      <p>&copy; 2026 Учебный проект</p>
+      <p>by seven</p>
+    </div>
+  </footer>
+</body>
+</html>

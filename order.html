@@ -3,36 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aroma Atelier — Бутик нишевой парфюмерии</title>
-  <!-- meta description повышает оценку за культуру вёрстки -->
-  <meta name="description" content="Селективная парфюмерия, редкие композиции и заказ пробников.">
+  <title>Оформление заказа — Aroma Atelier</title>
+  <meta name="description" content="Оформление заказа нишевой парфюмерии с доставкой по Москве и всей России.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
     <div class="div-head container">
-        <h1 class="brand-title">
-          <a class="brand-name" href="index.html">Aroma Atelier</a>
-        </h1>
-      <nav>
+      <h1 class="brand-title">
+        <a class="brand-name" href="index.html">Aroma Atelier</a>
+      </h1>
+      <nav aria-label="Основная навигация">
         <ul class="links">
           <li><a href="index.html">Главная</a></li>
           <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="order.html" class="link--active">Избранное</a></li>
+          <li><a class="link--active" href="order.html" aria-current="page">Заказ</a></li>
           <li><a href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
     </div>
   </header>
-    
-  <main>
 
+  <main class="order-page container">
+    <h2 class="section-title">Оформление заказа</h2>
+
+    <div class="order-layout">
+      <!-- 1. Форма сбора данных -->
+      <form class="order-form" action="#" method="post">
+        <!-- Блок контактных данных -->
+        <fieldset class="form-section">
+          <legend class="form-section__legend">1. Контактные данные</legend>
+
+          <div class="form-field">
+            <label class="form-label" for="user-name">Имя и фамилия *</label>
+            <input class="form-input" type="text" id="user-name" name="name" placeholder="Константин Константинопольский" required minlength="2">
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="user-phone">Телефон *</label>
+              <input class="form-input" type="tel" id="user-phone" name="phone" placeholder="+7 (999) 000-00-00" required>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="user-email">Электронная почта *</label>
+              <input class="form-input" type="email" id="user-email" name="email" placeholder="example@mail.ru" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Блок доставки -->
+        <fieldset class="form-section">
+          <legend class="form-section__legend">2. Доставка и получение</legend>
+
+          <div class="form-field">
+            <label class="form-label" for="city-select">Город доставки</label>
+            <select class="form-select" id="city-select" name="city">
+              <option value="msk">Москва (Курьер до двери)</option>
+              <option value="spb">Санкт-Петербург</option>
+              <option value="nalchik">Нальчик</option>
+              <option value="other">Другой город (СДЭК / Почта России)</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="address">Адрес доставки / Пункт выдачи *</label>
+            <input class="form-input" type="text" id="address" name="address" placeholder="Улица, дом, квартира или номер отделения СДЭК" required>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="order-comment">Комментарий к заказу</label>
+            <textarea class="form-textarea" id="order-comment" name="comment" rows="3" placeholder="Удобное время звонка, код домофона или пожелания к упаковке"></textarea>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn--primary btn--submit">Подтвердить заказ</button>
+      </form>
+
+      <!-- 2. Сводка заказа (Aside) -->
+      <aside class="order-summary">
+        <h3 class="order-summary__title">Ваш выбор</h3>
+        <div class="order-summary__item">
+          <div>
+            <strong>Layton Royal</strong>
+            <p class="order-summary__meta">Флакон 125 мл • EDP</p>
+          </div>
+          <span class="order-summary__item-price">24 500 ₽</span>
+        </div>
+
+        <div class="order-summary__totals">
+          <div class="summary-line">
+            <span>Доставка:</span>
+            <span class="summary-line--free">Бесплатно</span>
+          </div>
+          <div class="summary-line summary-line--total">
+            <span>Итого к оплате:</span>
+            <span>24 500 ₽</span>
+          </div>
+        </div>
+
+        <p class="order-summary__note">
+          Оплата производится при получении после проверки целостности флакона и батч-кода.
+        </p>
+      </aside>
+    </div>
   </main>
+
   <footer>
     <div class="div-foot container">
-        <p>&copy; 2026 Учебный проект</p>
-        <p>by seven</p>
+      <p>&copy; 2026 Учебный проект</p>
+      <p>by seven</p>
     </div>
   </footer>
 </body>
-
+</html>
