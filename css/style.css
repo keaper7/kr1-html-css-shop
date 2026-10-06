@@ -11,7 +11,6 @@ body {
   flex-direction: column;
 }
 header,
-main,
 footer {
   padding: 20px;
 }
@@ -331,7 +330,6 @@ footer {
 /* 2. Сетка товаров на CSS Grid */
 .catalog-grid {
   display: grid;
-  /* Адаптивная колоночная сетка: карточки шириной от 240px делят 1fr */
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 24px;
 }
