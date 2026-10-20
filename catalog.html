@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Каталог — Aroma Atelier</title>
   <meta name="description" content="Каталог селективной и нишевой парфюмерии: восточные, древесные и свежие ароматы.">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -33,11 +34,10 @@
     <div class="row g-4">
       
       <!-- Левая колонка: Фильтры (3 колонки из 12) -->
-      <aside class="col-md-3">
+      <aside class="col-md-4 col-lg-3">
         <div class="bg-light border rounded p-4 sticky-top" style="top: 20px;">
           <h2 class="h5 mb-4">Фильтры</h2>
           <form>
-            <!-- Чекбоксы -->
             <fieldset class="mb-4">
               <legend class="fs-6 fw-bold mb-3">Семейство нот</legend>
               <div class="form-check mb-2">
@@ -54,7 +54,6 @@
               </div>
             </fieldset>
 
-            <!-- Радиокнопки -->
             <fieldset class="mb-4">
               <legend class="fs-6 fw-bold mb-3">Объём</legend>
               <div class="form-check mb-2">
@@ -80,59 +79,89 @@
         </div>
       </aside>
 
-      <!-- Правая колонка: Сетка товаров (9 колонок из 12) -->
-      <section class="col-md-9">
-        <h2 class="h3 mb-4">Все ароматы коллекции</h2>
-        <div class="row g-4">
+      <!-- Правая колонка: Карусель карточек товаров (9 колонок из 12) -->
+      <section class="col-md-8 col-lg-9">
+        
+        <div id="carouselStacked" class="carousel slide" data-bs-ride="false">
           
-          <!-- Карточка 1 -->
-          <div class="col-sm-6 col-lg-4">
-            <article class="card h-100 shadow-sm border-0 position-relative">
-              <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3">Хит</span>
-              <div class="card-body d-flex flex-column">
-                <h3 class="card-title h5 mt-2">Layton Royal</h3>
-                <p class="card-subtitle mb-2 text-muted small">Восточные, пряные</p>
-                <p class="card-text text-secondary mb-4 flex-grow-1">Бергамот, яблоко и лаванда с глубоким древесно-ванильным шлейфом.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold">24 500 ₽</span>
-                  <a href="product.html" class="btn btn-sm btn-dark">Подробнее</a>
-                </div>
-              </div>
-            </article>
+          <!-- Верхний блок с заголовком и кнопками переключения -->
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="h3 mb-0">Все ароматы коллекции</h2>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-dark btn-sm rounded-circle d-flex align-items-center justify-content-center" 
+                      type="button" 
+                      data-bs-target="#carouselStacked" 
+                      data-bs-slide="prev" 
+                      style="width: 36px; height: 36px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1); width: 14px; height: 14px;"></span>
+                <span class="visually-hidden">Предыдущий</span>
+              </button>
+              <button class="btn btn-outline-dark btn-sm rounded-circle d-flex align-items-center justify-content-center" 
+                      type="button" 
+                      data-bs-target="#carouselStacked" 
+                      data-bs-slide="next" 
+                      style="width: 36px; height: 36px;">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1); width: 14px; height: 14px;"></span>
+                <span class="visually-hidden">Следующий</span>
+              </button>
+            </div>
           </div>
 
-          <!-- Карточка 2 -->
-          <div class="col-sm-6 col-lg-4">
-            <article class="card h-100 shadow-sm border-0 position-relative">
-              <span class="badge bg-danger position-absolute top-0 end-0 m-3">-15%</span>
-              <div class="card-body d-flex flex-column">
-                <h3 class="card-title h5 mt-2">Santal Wood</h3>
-                <p class="card-subtitle mb-2 text-muted small">Древесные, кожаные</p>
-                <p class="card-text text-secondary mb-4 flex-grow-1">Тёплый австралийский сандал, сухой кедр и мягкая замша.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold">18 700 ₽</span>
-                  <a href="product.html" class="btn btn-sm btn-dark">Подробнее</a>
+          <!-- Карусель -->
+          <div class="carousel-inner rounded-5 p-2">
+            
+            <!-- Слайд 1 -->
+            <div class="carousel-item active">
+              <section class="card mx-auto shadow-sm border-0 position-relative" style="max-width: 340px;">
+                <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3">Хит</span>
+                <img src="images/layton-hero.webp" class="card-img-top p-3 rounded-4" alt="Layton Royal">
+                <div class="card-body text-center pt-0">
+                  <h4 class="card-title h5">Layton Royal</h4>
+                  <p class="card-subtitle mb-2 text-muted small">Восточные, пряные</p>
+                  <p class="card-text text-secondary small">Бергамот, яблоко и лаванда с глубоким древесно-ванильным шлейфом.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span class="fw-bold fs-5">24 500 ₽</span>
+                    <a href="product.html" class="btn btn-dark btn-sm">Подробнее</a>
+                  </div>
                 </div>
-              </div>
-            </article>
-          </div>
+              </section>
+            </div>
 
-          <!-- Карточка 3 -->
-          <div class="col-sm-6 col-lg-4">
-            <article class="card h-100 shadow-sm border-0 position-relative">
-              <span class="badge bg-info text-dark position-absolute top-0 end-0 m-3">Новинка</span>
-              <div class="card-body d-flex flex-column">
-                <h3 class="card-title h5 mt-2">Mineral Amber</h3>
-                <p class="card-subtitle mb-2 text-muted small">Свежие, минеральные</p>
-                <p class="card-text text-secondary mb-4 flex-grow-1">Искрящийся грейпфрут, влажный ветивер и прохладная серая амбра.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold">21 000 ₽</span>
-                  <a href="product.html" class="btn btn-sm btn-dark">Подробнее</a>
+            <!-- Слайд 2 -->
+            <div class="carousel-item">
+              <section class="card mx-auto shadow-sm border-0 position-relative" style="max-width: 340px;">
+                <span class="badge bg-danger position-absolute top-0 end-0 m-3">-15%</span>
+                <img src="images/layton-hero.webp" class="card-img-top p-3 rounded-4" alt="Santal Wood">
+                <div class="card-body text-center pt-0">
+                  <h4 class="card-title h5">Santal Wood</h4>
+                  <p class="card-subtitle mb-2 text-muted small">Древесные, кожаные</p>
+                  <p class="card-text text-secondary small">Тёплый австралийский сандал, сухой кедр и мягкая замша.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span class="fw-bold fs-5">18 700 ₽</span>
+                    <a href="product.html" class="btn btn-dark btn-sm">Подробнее</a>
+                  </div>
                 </div>
-              </div>
-            </article>
-          </div>
+              </section>
+            </div>
 
+            <!-- Слайд 3 -->
+            <div class="carousel-item">
+              <section class="card mx-auto shadow-sm border-0 position-relative" style="max-width: 340px;">
+                <span class="badge bg-info text-dark position-absolute top-0 end-0 m-3">Новинка</span>
+                <img src="images/layton-hero.webp" class="card-img-top p-3 rounded-4" alt="Mineral Amber">
+                <div class="card-body text-center pt-0">
+                  <h4 class="card-title h5">Mineral Amber</h4>
+                  <p class="card-subtitle mb-2 text-muted small">Свежие, минеральные</p>
+                  <p class="card-text text-secondary small">Искрящийся грейпфрут, влажный ветивер и прохладная серая амбра.</p>
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span class="fw-bold fs-5">21 000 ₽</span>
+                    <a href="product.html" class="btn btn-dark btn-sm">Подробнее</a>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -146,6 +175,6 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
