@@ -5,150 +5,147 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Каталог — Aroma Atelier</title>
   <meta name="description" content="Каталог селективной и нишевой парфюмерии: восточные, древесные и свежие ароматы.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <header>
-    <div class="div-head container">
-      <h1 class="brand-title">
-        <a class="brand-name" href="index.html">Aroma Atelier</a>
-      </h1>
-      <nav aria-label="Основная навигация">
-        <ul class="links">
-          <li><a href="index.html">Главная</a></li>
-          <li><a class="link--active" href="catalog.html" aria-current="page">Каталог</a></li>
-          <li><a href="order.html">Заказ</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-        </ul>
+<body class="d-flex flex-column min-vh-100">
+
+  <header class="bg-light py-2">
+    <div class="container">
+      <nav class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand fs-3 text-dark mb-0 h1" href="index.html">Aroma Atelier</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключатель навигации">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav gap-md-4 mt-3 mt-md-0">
+            <li class="nav-item"><a class="nav-link text-dark" href="index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link text-dark fw-bold active-nav-link" href="catalog.html" aria-current="page">Каталог</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="order.html">Заказ</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
   </header>
 
-  <main class="catalog-page container">
+  <main class="container py-5 flex-grow-1">
+    <div class="row g-4">
+      
+      <!-- Левая колонка: Фильтры (3 колонки из 12) -->
+      <aside class="col-md-3">
+        <div class="bg-light border rounded p-4 sticky-top" style="top: 20px;">
+          <h2 class="h5 mb-4">Фильтры</h2>
+          <form>
+            <!-- Чекбоксы -->
+            <fieldset class="mb-4">
+              <legend class="fs-6 fw-bold mb-3">Семейство нот</legend>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="woody" id="wood">
+                <label class="form-check-label text-muted" for="wood">Древесные</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="oriental" id="orient">
+                <label class="form-check-label text-muted" for="orient">Восточные</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="fresh" id="fresh">
+                <label class="form-check-label text-muted" for="fresh">Свежие / Цитрусовые</label>
+              </div>
+            </fieldset>
 
-    <!-- Левая колонка: Фильтры -->
-    <aside class="catalog-filters">
-      <h2 class="filters-title">Фильтры</h2>
+            <!-- Радиокнопки -->
+            <fieldset class="mb-4">
+              <legend class="fs-6 fw-bold mb-3">Объём</legend>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="radio" name="volume" id="volAll" checked>
+                <label class="form-check-label text-muted" for="volAll">Все объёмы</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="radio" name="volume" id="vol10">
+                <label class="form-check-label text-muted" for="vol10">Отливант 10 мл</label>
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="radio" name="volume" id="vol50">
+                <label class="form-check-label text-muted" for="vol50">Флакон 50 мл</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="volume" id="vol100">
+                <label class="form-check-label text-muted" for="vol100">Флакон 100 мл</label>
+              </div>
+            </fieldset>
 
-      <form class="filters-form">
-        <!-- 1. Группа по семейству ароматов (Чекбоксы - можно выбрать несколько) -->
-        <fieldset class="filter-group">
-          <legend class="filter-group__legend">Семейство нот</legend>
-          <label class="filter-option">
-            <input type="checkbox" name="family" value="woody"> Древесные
-          </label>
-          <label class="filter-option">
-            <input type="checkbox" name="family" value="oriental"> Восточные
-          </label>
-          <label class="filter-option">
-            <input type="checkbox" name="family" value="fresh"> Свежие / Цитрусовые
-          </label>
-        </fieldset>
+            <button type="reset" class="btn btn-outline-secondary w-100">Сбросить</button>
+          </form>
+        </div>
+      </aside>
 
-        <!-- 2. Группа по объему флакона (Радиокнопки - выбор только одного) -->
-        <fieldset class="filter-group">
-          <legend class="filter-group__legend">Объём</legend>
-          <label class="filter-option">
-            <input type="radio" name="volume" value="all" checked> Все объёмы
-          </label>
-          <label class="filter-option">
-            <input type="radio" name="volume" value="10"> Отливант 10 мл
-          </label>
-          <label class="filter-option">
-            <input type="radio" name="volume" value="50"> Флакон 50 мл
-          </label>
-          <label class="filter-option">
-            <input type="radio" name="volume" value="100"> Флакон 100 мл
-          </label>
-        </fieldset>
-
-        <button type="reset" class="btn btn--secondary btn--reset">Сбросить</button>
-      </form>
-    </aside>
-
-    <!-- Правая колонка: Сетка товаров -->
-    <section class="catalog-content">
-      <h2 class="section-title">Все ароматы коллекции</h2>
-      <div class="catalog-grid">
-        <!-- Карточка 1 -->
-        <article class="card">
-          <span class="badge badge--hit">Хит</span>
-          <h3 class="card__title">Layton Royal</h3>
-          <p class="card__category">Восточные, пряные</p>
-          <p class="card__desc">Бергамот, яблоко и лаванда с глубоким древесно-ванильным шлейфом.</p>
-          <div class="card__bottom">
-            <span class="card__price">24 500 ₽</span>
-            <a class="btn btn--small" href="product.html">Подробнее</a>
+      <!-- Правая колонка: Сетка товаров (9 колонок из 12) -->
+      <section class="col-md-9">
+        <h2 class="h3 mb-4">Все ароматы коллекции</h2>
+        <div class="row g-4">
+          
+          <!-- Карточка 1 -->
+          <div class="col-sm-6 col-lg-4">
+            <article class="card h-100 shadow-sm border-0 position-relative">
+              <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3">Хит</span>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5 mt-2">Layton Royal</h3>
+                <p class="card-subtitle mb-2 text-muted small">Восточные, пряные</p>
+                <p class="card-text text-secondary mb-4 flex-grow-1">Бергамот, яблоко и лаванда с глубоким древесно-ванильным шлейфом.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold">24 500 ₽</span>
+                  <a href="product.html" class="btn btn-sm btn-dark">Подробнее</a>
+                </div>
+              </div>
+            </article>
           </div>
-        </article>
 
-        <!-- Карточка 2 -->
-        <article class="card">
-          <span class="badge badge--sale">-15%</span>
-          <h3 class="card__title">Santal Wood</h3>
-          <p class="card__category">Древесные, кожаные</p>
-          <p class="card__desc">Тёплый австралийский сандал, сухой кедр и мягкая замша.</p>
-          <div class="card__bottom">
-            <span class="card__price">18 700 ₽</span>
-            <a class="btn btn--small" href="product.html">Подробнее</a>
+          <!-- Карточка 2 -->
+          <div class="col-sm-6 col-lg-4">
+            <article class="card h-100 shadow-sm border-0 position-relative">
+              <span class="badge bg-danger position-absolute top-0 end-0 m-3">-15%</span>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5 mt-2">Santal Wood</h3>
+                <p class="card-subtitle mb-2 text-muted small">Древесные, кожаные</p>
+                <p class="card-text text-secondary mb-4 flex-grow-1">Тёплый австралийский сандал, сухой кедр и мягкая замша.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold">18 700 ₽</span>
+                  <a href="product.html" class="btn btn-sm btn-dark">Подробнее</a>
+                </div>
+              </div>
+            </article>
           </div>
-        </article>
 
-        <!-- Карточка 3 -->
-        <article class="card">
-          <span class="badge badge--new">Новинка</span>
-          <h3 class="card__title">Mineral Amber</h3>
-          <p class="card__category">Свежие, минеральные</p>
-          <p class="card__desc">Искрящийся грейпфрут, влажный ветивер и прохладная серая амбра.</p>
-          <div class="card__bottom">
-            <span class="card__price">21 000 ₽</span>
-            <a class="btn btn--small" href="product.html">Подробнее</a>
+          <!-- Карточка 3 -->
+          <div class="col-sm-6 col-lg-4">
+            <article class="card h-100 shadow-sm border-0 position-relative">
+              <span class="badge bg-info text-dark position-absolute top-0 end-0 m-3">Новинка</span>
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5 mt-2">Mineral Amber</h3>
+                <p class="card-subtitle mb-2 text-muted small">Свежие, минеральные</p>
+                <p class="card-text text-secondary mb-4 flex-grow-1">Искрящийся грейпфрут, влажный ветивер и прохладная серая амбра.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold">21 000 ₽</span>
+                  <a href="product.html" class="btn btn-sm btn-dark">Подробнее</a>
+                </div>
+              </div>
+            </article>
           </div>
-        </article>
 
-        <!-- Карточка 4 -->
-        <article class="card">
-          <h3 class="card__title">Black Pepper & Neroli</h3>
-          <p class="card__category">Пряные, цитрусовые</p>
-          <p class="card__desc">Острый мадагаскарский перец, цветы апельсинового дерева и элеми.</p>
-          <div class="card__bottom">
-            <span class="card__price">16 200 ₽</span>
-            <a class="btn btn--small" href="product.html">Подробнее</a>
-          </div>
-        </article>
+        </div>
+      </section>
 
-        <!-- Карточка 5 -->
-        <article class="card">
-          <span class="badge badge--hit">Хит</span>
-          <h3 class="card__title">Velvet Tobacco</h3>
-          <p class="card__category">Восточные, табачные</p>
-          <p class="card__desc">Листья кубинского табака, медовый ладан, бобы тонка и корица.</p>
-          <div class="card__bottom">
-            <span class="card__price">26 800 ₽</span>
-            <a class="btn btn--small" href="product.html">Подробнее</a>
-          </div>
-        </article>
-
-        <!-- Карточка 6 -->
-        <article class="card">
-          <h3 class="card__title">Iris Imperial</h3>
-          <p class="card__category">Цветочные, пудровые</p>
-          <p class="card__desc">Флорентийский корень ириса, мускус, фиалка и белый кедр.</p>
-          <div class="card__bottom">
-            <span class="card__price">22 400 ₽</span>
-            <a class="btn btn--small" href="product.html">Подробнее</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
+    </div>
   </main>
 
-  <footer>
-    <div class="div-foot container">
-      <p>&copy; 2026 Учебный проект</p>
-      <p>by seven</p>
+  <footer class="bg-light py-4 mt-auto">
+    <div class="container d-flex justify-content-between align-items-center">
+      <p class="mb-0 text-muted">&copy; 2026 Учебный проект</p>
+      <p class="mb-0 text-muted">by seven</p>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
