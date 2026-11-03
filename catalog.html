@@ -2,179 +2,148 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Каталог — Aroma Atelier</title>
-  <meta name="description" content="Каталог селективной и нишевой парфюмерии: восточные, древесные и свежие ароматы.">
-  
-  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body>
 
-  <header class="bg-light py-2">
-    <div class="container">
-      <nav class="navbar navbar-expand-md navbar-light">
-        <a class="navbar-brand fs-3 text-dark mb-0 h1" href="index.html">Aroma Atelier</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключатель навигации">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav gap-md-4 mt-3 mt-md-0">
-            <li class="nav-item"><a class="nav-link text-dark" href="index.html">Главная</a></li>
-            <li class="nav-item"><a class="nav-link text-dark fw-bold active-nav-link" href="catalog.html" aria-current="page">Каталог</a></li>
-            <li class="nav-item"><a class="nav-link text-dark" href="order.html">Заказ</a></li>
-            <li class="nav-item"><a class="nav-link text-dark" href="contacts.html">Контакты</a></li>
-          </ul>
-        </div>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Aroma Atelier</a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Главная</a></li>
+          <li><a href="catalog.html" class="nav-link active">Каталог</a></li>
+          <li><a href="order.html" class="nav-link">Заказ</a></li>
+          <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main class="container py-5 flex-grow-1">
-    <div class="row g-4">
+  <main class="main-content">
+    <div class="container section">
+      <h1 class="section-title">Вся коллекция</h1>
       
-      <!-- Левая колонка: Фильтры (3 колонки из 12) -->
-      <aside class="col-md-4 col-lg-3">
-        <div class="bg-light border rounded p-4 sticky-top" style="top: 20px;">
-          <h2 class="h5 mb-4">Фильтры</h2>
+      <div class="catalog-layout">
+        <aside class="sidebar">
+          <h2 class="sidebar-title">Фильтры</h2>
           <form>
-            <fieldset class="mb-4">
-              <legend class="fs-6 fw-bold mb-3">Семейство нот</legend>
-              <div class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" value="woody" id="wood">
-                <label class="form-check-label text-muted" for="wood">Древесные</label>
-              </div>
-              <div class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" value="oriental" id="orient">
-                <label class="form-check-label text-muted" for="orient">Восточные</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="fresh" id="fresh">
-                <label class="form-check-label text-muted" for="fresh">Свежие / Цитрусовые</label>
-              </div>
+            <fieldset class="filter-group">
+              <legend class="filter-legend">Семейство</legend>
+              <label class="checkbox-label"><input type="checkbox"> Древесные</label>
+              <label class="checkbox-label"><input type="checkbox"> Восточные</label>
+              <label class="checkbox-label"><input type="checkbox"> Свежие</label>
+              <label class="checkbox-label"><input type="checkbox"> Гурманские</label>
+              <label class="checkbox-label"><input type="checkbox"> Цветочные</label>
             </fieldset>
-
-            <fieldset class="mb-4">
-              <legend class="fs-6 fw-bold mb-3">Объём</legend>
-              <div class="form-check mb-2">
-                <input class="form-check-input" type="radio" name="volume" id="volAll" checked>
-                <label class="form-check-label text-muted" for="volAll">Все объёмы</label>
-              </div>
-              <div class="form-check mb-2">
-                <input class="form-check-input" type="radio" name="volume" id="vol10">
-                <label class="form-check-label text-muted" for="vol10">Отливант 10 мл</label>
-              </div>
-              <div class="form-check mb-2">
-                <input class="form-check-input" type="radio" name="volume" id="vol50">
-                <label class="form-check-label text-muted" for="vol50">Флакон 50 мл</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="volume" id="vol100">
-                <label class="form-check-label text-muted" for="vol100">Флакон 100 мл</label>
-              </div>
-            </fieldset>
-
-            <button type="reset" class="btn btn-outline-secondary w-100">Сбросить</button>
+            <button type="reset" class="btn btn-outline btn-large">Сбросить</button>
           </form>
-        </div>
-      </aside>
+        </aside>
 
-      <!-- Правая колонка: Карусель карточек товаров (9 колонок из 12) -->
-      <section class="col-md-8 col-lg-9">
-        
-        <div id="carouselStacked" class="carousel slide" data-bs-ride="false">
+        <div class="catalog-grid">
+          <article class="product-card">
+            <span class="badge">Хит</span>
+            <img src="images/layton-hero.webp" alt="Layton Royal" class="card-img">
+            <div class="card-content">
+              <h3 class="card-title">Layton Royal</h3>
+              <p class="card-category">Восточные, пряные</p>
+              <span class="card-price">24 500 ₽</span>
+              <a href="product.html" class="btn btn-outline">Детали</a>
+            </div>
+          </article>
           
-          <!-- Верхний блок с заголовком и кнопками переключения -->
-          <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2 class="h3 mb-0">Все ароматы коллекции</h2>
-            <div class="d-flex gap-2">
-              <button class="btn btn-outline-dark btn-sm rounded-circle d-flex align-items-center justify-content-center" 
-                      type="button" 
-                      data-bs-target="#carouselStacked" 
-                      data-bs-slide="prev" 
-                      style="width: 36px; height: 36px;">
-                <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1); width: 14px; height: 14px;"></span>
-                <span class="visually-hidden">Предыдущий</span>
-              </button>
-              <button class="btn btn-outline-dark btn-sm rounded-circle d-flex align-items-center justify-content-center" 
-                      type="button" 
-                      data-bs-target="#carouselStacked" 
-                      data-bs-slide="next" 
-                      style="width: 36px; height: 36px;">
-                <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1); width: 14px; height: 14px;"></span>
-                <span class="visually-hidden">Следующий</span>
-              </button>
+          <article class="product-card">
+            <img src="images/layton-hero.webp" alt="Oud Symphony" class="card-img">
+            <div class="card-content">
+              <h3 class="card-title">Oud Symphony</h3>
+              <p class="card-category">Древесные, дымные</p>
+              <span class="card-price">32 000 ₽</span>
+              <a href="product.html" class="btn btn-outline">Детали</a>
             </div>
-          </div>
+          </article>
 
-          <!-- Карусель -->
-          <div class="carousel-inner rounded-5 p-2">
-            
-            <!-- Слайд 1 -->
-            <div class="carousel-item active">
-              <section class="card mx-auto shadow-sm border-0 position-relative" style="max-width: 340px;">
-                <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3">Хит</span>
-                <img src="images/layton-hero.webp" class="card-img-top p-3 rounded-4" alt="Layton Royal">
-                <div class="card-body text-center pt-0">
-                  <h4 class="card-title h5">Layton Royal</h4>
-                  <p class="card-subtitle mb-2 text-muted small">Восточные, пряные</p>
-                  <p class="card-text text-secondary small">Бергамот, яблоко и лаванда с глубоким древесно-ванильным шлейфом.</p>
-                  <div class="d-flex justify-content-between align-items-center mt-3">
-                    <span class="fw-bold fs-5">24 500 ₽</span>
-                    <a href="product.html" class="btn btn-dark btn-sm">Подробнее</a>
-                  </div>
-                </div>
-              </section>
+          <article class="product-card">
+            <img src="images/layton-hero.webp" alt="Velvet Cherry" class="card-img">
+            <div class="card-content">
+              <h3 class="card-title">Velvet Cherry</h3>
+              <p class="card-category">Фруктовые, гурманские</p>
+              <span class="card-price">28 900 ₽</span>
+              <a href="product.html" class="btn btn-outline">Детали</a>
             </div>
+          </article>
 
-            <!-- Слайд 2 -->
-            <div class="carousel-item">
-              <section class="card mx-auto shadow-sm border-0 position-relative" style="max-width: 340px;">
-                <span class="badge bg-danger position-absolute top-0 end-0 m-3">-15%</span>
-                <img src="images/layton-hero.webp" class="card-img-top p-3 rounded-4" alt="Santal Wood">
-                <div class="card-body text-center pt-0">
-                  <h4 class="card-title h5">Santal Wood</h4>
-                  <p class="card-subtitle mb-2 text-muted small">Древесные, кожаные</p>
-                  <p class="card-text text-secondary small">Тёплый австралийский сандал, сухой кедр и мягкая замша.</p>
-                  <div class="d-flex justify-content-between align-items-center mt-3">
-                    <span class="fw-bold fs-5">18 700 ₽</span>
-                    <a href="product.html" class="btn btn-dark btn-sm">Подробнее</a>
-                  </div>
-                </div>
-              </section>
+          <article class="product-card">
+            <span class="badge">Sale</span>
+            <img src="images/layton-hero.webp" alt="Santal Wood" class="card-img">
+            <div class="card-content">
+              <h3 class="card-title">Santal Wood</h3>
+              <p class="card-category">Древесные, кожаные</p>
+              <span class="card-price">18 700 ₽</span>
+              <a href="product.html" class="btn btn-outline">Детали</a>
             </div>
+          </article>
 
-            <!-- Слайд 3 -->
-            <div class="carousel-item">
-              <section class="card mx-auto shadow-sm border-0 position-relative" style="max-width: 340px;">
-                <span class="badge bg-info text-dark position-absolute top-0 end-0 m-3">Новинка</span>
-                <img src="images/layton-hero.webp" class="card-img-top p-3 rounded-4" alt="Mineral Amber">
-                <div class="card-body text-center pt-0">
-                  <h4 class="card-title h5">Mineral Amber</h4>
-                  <p class="card-subtitle mb-2 text-muted small">Свежие, минеральные</p>
-                  <p class="card-text text-secondary small">Искрящийся грейпфрут, влажный ветивер и прохладная серая амбра.</p>
-                  <div class="d-flex justify-content-between align-items-center mt-3">
-                    <span class="fw-bold fs-5">21 000 ₽</span>
-                    <a href="product.html" class="btn btn-dark btn-sm">Подробнее</a>
-                  </div>
-                </div>
-              </section>
-            </div>
+          <article class="product-card">
+             <span class="badge">Новинка</span>
+             <img src="images/layton-hero.webp" alt="Baccarat Rose" class="card-img">
+             <div class="card-content">
+               <h3 class="card-title">Baccarat Rose</h3>
+               <p class="card-category">Цветочные, амбровые</p>
+               <span class="card-price">41 000 ₽</span>
+               <a href="product.html" class="btn btn-outline">Детали</a>
+             </div>
+           </article>
 
-          </div>
+           <article class="product-card">
+             <img src="images/layton-hero.webp" alt="Mineral Amber" class="card-img">
+             <div class="card-content">
+               <h3 class="card-title">Mineral Amber</h3>
+               <p class="card-category">Свежие, минеральные</p>
+               <span class="card-price">21 000 ₽</span>
+               <a href="product.html" class="btn btn-outline">Детали</a>
+             </div>
+           </article>
         </div>
-      </section>
-
+      </div>
     </div>
   </main>
 
-  <footer class="bg-light py-4 mt-auto">
-    <div class="container d-flex justify-content-between align-items-center">
-      <p class="mb-0 text-muted">&copy; 2026 Учебный проект</p>
-      <p class="mb-0 text-muted">by seven</p>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="font-size: 24px; margin-bottom: 15px; display: inline-block;">Aroma Atelier</a>
+        <p style="color: var(--color-gray); font-size: 14px; max-width: 250px;">Искусство селективной парфюмерии. Редкие ароматы и индивидуальный подход к каждому клиенту.</p>
+      </div>
+      
+      <div class="footer-col">
+        <h4 class="footer-title">Навигация</h4>
+        <ul class="footer-list">
+          <li><a href="catalog.html">Каталог ароматов</a></li>
+          <li><a href="order.html">Оплата и доставка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Связь</h4>
+        <ul class="footer-list">
+          <li><a href="tel:+74950000000">+7 (495) 000-00-00</a></li>
+          <li><a href="mailto:boutique@aromaatelier.ru">boutique@aromaatelier.ru</a></li>
+          <li style="margin-top: 10px; color: var(--color-gray);">Ежедневно с 10:00 до 22:00</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Aroma Atelier.</p>
+        <p>by seven</p>
+      </div>
     </div>
   </footer>
 
-  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

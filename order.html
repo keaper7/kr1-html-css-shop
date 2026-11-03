@@ -2,131 +2,97 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Оформление заказа — Aroma Atelier</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body>
 
-  <header class="bg-light py-2">
-    <div class="container">
-      <nav class="navbar navbar-expand-md navbar-light">
-        <a class="navbar-brand fs-3 text-dark mb-0 h1" href="index.html">Aroma Atelier</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключатель навигации">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav gap-md-4 mt-3 mt-md-0">
-            <li class="nav-item"><a class="nav-link text-dark" href="index.html">Главная</a></li>
-            <li class="nav-item"><a class="nav-link text-dark" href="catalog.html">Каталог</a></li>
-            <li class="nav-item"><a class="nav-link text-dark fw-bold active-nav-link" href="order.html" aria-current="page">Заказ</a></li>
-            <li class="nav-item"><a class="nav-link text-dark" href="contacts.html">Контакты</a></li>
-          </ul>
-        </div>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Aroma Atelier</a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Главная</a></li>
+          <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+          <li><a href="order.html" class="nav-link active">Заказ</a></li>
+          <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main class="container py-5 flex-grow-1">
-    <h1 class="h2 mb-4">Оформление заказа</h1>
-    
-    <div class="row g-5">
-      <!-- Левая колонка: Форма -->
-      <div class="col-lg-8">
-        <form action="#" method="post">
+  <main class="main-content">
+    <div class="container section">
+      <h1 class="section-title">Оформление заказа</h1>
+      
+      <form class="split-layout">
+        <div class="split-main">
+          <h2 class="sidebar-title">Контактные данные</h2>
           
-          <!-- Блок 1: Контакты -->
-          <div class="bg-light border rounded p-4 mb-4">
-            <h2 class="h5 mb-4">1. Контактные данные</h2>
-            
-            <div class="mb-3">
-              <label for="userName" class="form-label fw-bold small">Имя и фамилия *</label>
-              <input type="text" class="form-control" id="userName" placeholder="Константин Константинопольский" required minlength="2">
-            </div>
-            
-            <div class="row g-3">
-              <div class="col-md-6">
-                <label for="userPhone" class="form-label fw-bold small">Телефон *</label>
-                <input type="tel" class="form-control" id="userPhone" placeholder="+7 (999) 000-00-00" required>
-              </div>
-              <div class="col-md-6">
-                <label for="userEmail" class="form-label fw-bold small">Электронная почта *</label>
-                <input type="email" class="form-control" id="userEmail" placeholder="example@mail.ru" required>
-              </div>
-            </div>
-          </div>
-
-          <!-- Блок 2: Доставка -->
-          <div class="bg-light border rounded p-4 mb-4">
-            <h2 class="h5 mb-4">2. Доставка и получение</h2>
-            
-            <div class="mb-3">
-              <label for="citySelect" class="form-label fw-bold small">Город доставки</label>
-              <select class="form-select" id="citySelect">
-                <option value="msk">Москва (Курьер до двери)</option>
-                <option value="spb">Санкт-Петербург</option>
-                <option value="nalchik">Нальчик</option>
-                <option value="other">Другой город (СДЭК / Почта России)</option>
-              </select>
-            </div>
-            
-            <div class="mb-3">
-              <label for="address" class="form-label fw-bold small">Адрес доставки / Пункт выдачи *</label>
-              <input type="text" class="form-control" id="address" placeholder="Улица, дом, квартира или номер отделения СДЭК" required>
-            </div>
-            
-            <div class="mb-0">
-              <label for="orderComment" class="form-label fw-bold small">Комментарий к заказу</label>
-              <textarea class="form-control" id="orderComment" rows="3" placeholder="Удобное время звонка, код домофона или пожелания к упаковке"></textarea>
-            </div>
-          </div>
-
-          <button type="submit" class="btn btn-dark btn-lg w-100">Подтвердить заказ</button>
-        </form>
-      </div>
-
-      <!-- Правая колонка: Сводка -->
-      <aside class="col-lg-4">
-        <div class="border rounded p-4 sticky-top" style="top: 20px;">
-          <h3 class="h5 mb-4">Ваш выбор</h3>
-          
-          <div class="d-flex justify-content-between align-items-start border-bottom pb-3 mb-3">
-            <div>
-              <strong class="d-block">Layton Royal</strong>
-              <span class="text-muted small">Флакон 125 мл • EDP</span>
-            </div>
-            <strong class="fs-5">24 500 ₽</strong>
+          <div class="form-group">
+            <label class="form-label" for="name">Имя и Фамилия</label>
+            <input type="text" id="name" class="form-control" required placeholder="Константин Константинопольский">
           </div>
           
-          <div class="d-flex justify-content-between mb-2 small">
-            <span class="text-muted">Доставка:</span>
-            <span class="text-success fw-bold">Бесплатно</span>
+          <div class="form-group">
+            <label class="form-label" for="phone">Телефон</label>
+            <input type="tel" id="phone" class="form-control" required placeholder="+7 (999) 000-00-00">
           </div>
           
-          <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
-            <span class="fw-bold">Итого к оплате:</span>
-            <span class="fs-4 fw-bold">24 500 ₽</span>
+          <div class="form-group">
+            <label class="form-label" for="address">Адрес доставки</label>
+            <input type="text" id="address" class="form-control" required placeholder="Город, улица, дом, квартира">
           </div>
-          
-          <p class="text-muted small mt-4 mb-0 lh-sm">
-            Оплата производится при получении после проверки целостности флакона и батч-кода.
-          </p>
         </div>
-      </aside>
+
+        <aside class="split-sidebar">
+          <h3 class="sidebar-title">Ваш выбор</h3>
+          <p style="margin-bottom: 10px; font-weight: bold;">Layton Royal (125 мл)</p>
+          <p style="color: var(--color-gray); margin-bottom: 30px;">Доставка: Бесплатно</p>
+          
+          <p style="font-size: 24px; font-weight: bold; font-family: var(--font-heading); border-top: 1px solid var(--color-border); padding-top: 20px; margin-bottom: 30px;">Итого: 24 500 ₽</p>
+          
+          <button type="submit" class="btn btn-primary btn-large">Подтвердить заказ</button>
+        </aside>
+      </form>
     </div>
   </main>
 
-  <footer class="bg-light py-4 mt-auto">
-    <div class="container d-flex justify-content-between align-items-center">
-      <p class="mb-0 text-muted">&copy; 2026 Учебный проект</p>
-      <p class="mb-0 text-muted">by seven</p>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="font-size: 24px; margin-bottom: 15px; display: inline-block;">Aroma Atelier</a>
+        <p style="color: var(--color-gray); font-size: 14px; max-width: 250px;">Искусство селективной парфюмерии. Редкие ароматы и индивидуальный подход к каждому клиенту.</p>
+      </div>
+      
+      <div class="footer-col">
+        <h4 class="footer-title">Навигация</h4>
+        <ul class="footer-list">
+          <li><a href="catalog.html">Каталог ароматов</a></li>
+          <li><a href="order.html">Оплата и доставка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Связь</h4>
+        <ul class="footer-list">
+          <li><a href="tel:+74950000000">+7 (495) 000-00-00</a></li>
+          <li><a href="mailto:boutique@aromaatelier.ru">boutique@aromaatelier.ru</a></li>
+          <li style="margin-top: 10px; color: var(--color-gray);">Ежедневно с 10:00 до 22:00</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Aroma Atelier.</p>
+        <p>by seven</p>
+      </div>
     </div>
   </footer>
 
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
-   <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
