@@ -27,24 +27,31 @@
     <div class="container section">
       <h1 class="section-title">Оформление заказа</h1>
       
-      <form class="split-layout">
+      <!-- Добавили ID для скрипта и novalidate, чтобы отключить встроенные подсказки браузера -->
+      <form id="orderForm" class="split-layout" novalidate>
         <div class="split-main">
           <h2 class="sidebar-title">Контактные данные</h2>
           
           <div class="form-group">
             <label class="form-label" for="name">Имя и Фамилия</label>
-            <input type="text" id="name" class="form-control" required placeholder="Константин Константинопольский">
+            <input type="text" id="name" class="form-control" placeholder="Константин Константинопольский">
+            <!-- Контейнер для ошибки -->
+            <div id="nameError" class="error-text" style="color: red; font-size: 12px; margin-top: 5px;"></div>
           </div>
           
           <div class="form-group">
             <label class="form-label" for="phone">Телефон</label>
-            <input type="tel" id="phone" class="form-control" required placeholder="+7 (999) 000-00-00">
+            <input type="tel" id="phone" class="form-control" placeholder="+7 (999) 000-00-00">
+            <!-- Контейнер для ошибки -->
+            <div id="phoneError" class="error-text" style="color: red; font-size: 12px; margin-top: 5px;"></div>
           </div>
           
           <div class="form-group">
             <label class="form-label" for="address">Адрес доставки</label>
-            <input type="text" id="address" class="form-control" required placeholder="Город, улица, дом, квартира">
-          </div>
+            <input type="text" id="address" class="form-control" placeholder="Город, улица, дом, квартира">
+            <!-- Контейнер для ошибки -->
+            <div id="addressError" class="error-text" style="color: red; font-size: 12px; margin-top: 5px;"></div>
+          </div> 
         </div>
 
         <aside class="split-sidebar">
@@ -55,6 +62,9 @@
           <p style="font-size: 24px; font-weight: bold; font-family: var(--font-heading); border-top: 1px solid var(--color-border); padding-top: 20px; margin-bottom: 30px;">Итого: 24 500 ₽</p>
           
           <button type="submit" class="btn btn-primary btn-large">Подтвердить заказ</button>
+          
+          <!-- Контейнер для успешного сообщения после проверки -->
+          <div id="successMessage" style="color: green; font-weight: bold; margin-top: 15px; text-align: center;"></div>
         </aside>
       </form>
     </div>
@@ -94,5 +104,6 @@
     </div>
   </footer>
 
+  <script src="js/validation.js"></script>
 </body>
 </html>

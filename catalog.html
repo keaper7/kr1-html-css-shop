@@ -30,6 +30,9 @@
       <div class="catalog-layout">
         <aside class="sidebar">
           <h2 class="sidebar-title">Фильтры</h2>
+          <div style="margin-bottom: 30px;">
+            <input type="text" id="searchInput" class="form-control" placeholder="Поиск по названию...">
+          </div>
           <form>
             <fieldset class="filter-group">
               <legend class="filter-legend">Семейство</legend>
@@ -43,69 +46,22 @@
           </form>
         </aside>
 
-        <div class="catalog-grid">
-          <article class="product-card">
-            <span class="badge">Хит</span>
-            <img src="images/layton-hero.webp" alt="Layton Royal" class="card-img">
-            <div class="card-content">
-              <h3 class="card-title">Layton Royal</h3>
-              <p class="card-category">Восточные, пряные</p>
-              <span class="card-price">24 500 ₽</span>
-              <a href="product.html" class="btn btn-outline">Детали</a>
-            </div>
-          </article>
+        <div class="catalog-content" style="flex: 1;">
+    
+          <!-- Блок сортировки -->
+          <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+            <select id="sortSelect" class="form-control" style="width: 250px;">
+              <option value="default">Сначала популярные (по умолчанию)</option>
+              <option value="cheap">Сначала дешевые</option>
+              <option value="expensive">Сначала дорогие</option>
+            </select>
+          </div>
           
-          <article class="product-card">
-            <img src="images/layton-hero.webp" alt="Oud Symphony" class="card-img">
-            <div class="card-content">
-              <h3 class="card-title">Oud Symphony</h3>
-              <p class="card-category">Древесные, дымные</p>
-              <span class="card-price">32 000 ₽</span>
-              <a href="product.html" class="btn btn-outline">Детали</a>
-            </div>
-          </article>
+          <!-- Сама сетка товаров -->
+          <div class="catalog-grid">
+            <!-- Карточки генерируются скриптом -->
+          </div>
 
-          <article class="product-card">
-            <img src="images/layton-hero.webp" alt="Velvet Cherry" class="card-img">
-            <div class="card-content">
-              <h3 class="card-title">Velvet Cherry</h3>
-              <p class="card-category">Фруктовые, гурманские</p>
-              <span class="card-price">28 900 ₽</span>
-              <a href="product.html" class="btn btn-outline">Детали</a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <span class="badge">Sale</span>
-            <img src="images/layton-hero.webp" alt="Santal Wood" class="card-img">
-            <div class="card-content">
-              <h3 class="card-title">Santal Wood</h3>
-              <p class="card-category">Древесные, кожаные</p>
-              <span class="card-price">18 700 ₽</span>
-              <a href="product.html" class="btn btn-outline">Детали</a>
-            </div>
-          </article>
-
-          <article class="product-card">
-             <span class="badge">Новинка</span>
-             <img src="images/layton-hero.webp" alt="Baccarat Rose" class="card-img">
-             <div class="card-content">
-               <h3 class="card-title">Baccarat Rose</h3>
-               <p class="card-category">Цветочные, амбровые</p>
-               <span class="card-price">41 000 ₽</span>
-               <a href="product.html" class="btn btn-outline">Детали</a>
-             </div>
-           </article>
-
-           <article class="product-card">
-             <img src="images/layton-hero.webp" alt="Mineral Amber" class="card-img">
-             <div class="card-content">
-               <h3 class="card-title">Mineral Amber</h3>
-               <p class="card-category">Свежие, минеральные</p>
-               <span class="card-price">21 000 ₽</span>
-               <a href="product.html" class="btn btn-outline">Детали</a>
-             </div>
-           </article>
         </div>
       </div>
     </div>
@@ -145,5 +101,7 @@
     </div>
   </footer>
 
+  <script src="js/data.js"></script>
+  <script src="js/catalog.js"></script>
 </body>
 </html>
