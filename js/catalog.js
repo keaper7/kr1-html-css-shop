@@ -1,5 +1,24 @@
-// 1. Находим в HTML контейнер, куда будем складывать карточки
 const catalogGrid = document.querySelector('.catalog-grid');
+
+
+// добавление товара в корзину
+function addToCart(product) {
+  // достаем текущую корзину из памяти браузера, если там ничего нет, создаем пустой массив
+  const cartData = localStorage.getItem('perfumeCart');
+  const cart = cartData ? JSON.parse(cartData) : [];
+
+  // лежит ли уже такой парфюм в корзине
+  const existingItem = cart.find(item => item.title === product.title);
+
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    // если товара нет, добавляем его в массив и ставим счетчик 1
+    cart.push({ ...product, quantity: 1 });
+  }
+  // превращаем обновленный массив обратно в текст и сохраняем в браузер
+  localStorage.setItem('perfumeCart', JSON.stringify(cart));
+}
 
 // функция отрисовки карточек
 function renderProducts(productsArray) {
@@ -55,11 +74,30 @@ function renderProducts(productsArray) {
     price.classList.add('card-price');
     price.textContent = `${product.price.toLocaleString('ru-RU')} ₽`; 
 
-    // Кнопка
-    const btn = document.createElement('a');
-    btn.href = 'product.html';
-    btn.classList.add('btn', 'btn-outline');
-    btn.textContent = 'Детали';
+    // Кнопка корзины
+    const btn = document.createElement('button');
+    btn.classList.add('btn', 'btn-primary');
+    btn.textContent = 'В корзину';
+
+
+    btn.addEventListener('click', () => {
+      // функция сохранения
+      addToCart(product);
+      
+
+      const originalText = btn.textContent;
+      btn.textContent = 'Добавлено ✓';
+      btn.style.backgroundColor = '#28a745';
+      btn.style.borderColor = '#28a745';
+      btn.style.color = '#fff';
+      
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.backgroundColor = ''; 
+        btn.style.borderColor = '';
+        btn.style.color = '';
+      }, 1500);
+    });
 
     content.append(title, category, price, btn);
 
@@ -102,8 +140,6 @@ function updateCatalog() {
     const matchSearch = product.title.toLowerCase().includes(searchText);
 
 
-    // если галочки не стоят (длина массива 0), показываем всё (true) 
-    // иначе проверяем, есть ли категория товара в нашем списке нажатых галочек
     const matchCategory = checkedCategories.length === 0 || checkedCategories.includes(product.category);
 
     return matchSearch && matchCategory;

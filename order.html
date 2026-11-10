@@ -56,14 +56,20 @@
 
         <aside class="split-sidebar">
           <h3 class="sidebar-title">Ваш выбор</h3>
-          <p style="margin-bottom: 10px; font-weight: bold;">Layton Royal (125 мл)</p>
+          
+          <!-- контейнер для списка товаров -->
+          <div id="cartItemsList" style="margin-bottom: 20px;">
+
+          </div>
+          
           <p style="color: var(--color-gray); margin-bottom: 30px;">Доставка: Бесплатно</p>
           
-          <p style="font-size: 24px; font-weight: bold; font-family: var(--font-heading); border-top: 1px solid var(--color-border); padding-top: 20px; margin-bottom: 30px;">Итого: 24 500 ₽</p>
+          <!-- финальная сумма -->
+          <p id="cartTotalSum" style="font-size: 24px; font-weight: bold; font-family: var(--font-heading); border-top: 1px solid var(--color-border); padding-top: 20px; margin-bottom: 30px;">
+            Итого: 0 ₽
+          </p>
           
           <button type="submit" class="btn btn-primary btn-large">Подтвердить заказ</button>
-          
-          <!-- Контейнер для успешного сообщения после проверки -->
           <div id="successMessage" style="color: green; font-weight: bold; margin-top: 15px; text-align: center;"></div>
         </aside>
       </form>
