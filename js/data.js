@@ -1,21 +1,19 @@
-// Переменная products хранит массив (список) всех наших ароматов.
-// Внутри массива лежат объекты (каждый объект в фигурных скобках {} — это один товар).
 
 const products = [
   {
     id: 1,
     title: 'Layton Royal',
     category: 'Восточные',
-    price: 24500, // Заметь, никаких кавычек и букв "₽". Это чистая математика.
+    price: 24500,
     badge: 'Хит',
-    image: 'images/layton-hero.webp' // Путь к картинке
+    image: 'images/layton-hero.webp'
   },
   {
     id: 2,
     title: 'Oud Symphony',
     category: 'Древесные',
     price: 32000,
-    badge: '', // Пустая строка, если бейджа нет
+    badge: '',
     image: 'images/layton-hero.webp'
   },
   {
@@ -50,7 +48,6 @@ const products = [
     badge: '',
     image: 'images/layton-hero.webp'
   },
-  // Добавляем еще два аромата, чтобы выполнить требование "минимум 8 товаров"
   {
     id: 7,
     title: 'Vanilla Blend',
